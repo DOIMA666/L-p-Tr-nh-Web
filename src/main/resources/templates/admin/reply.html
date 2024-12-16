@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Shop | eCommerce</title>
+    <meta name="description" content/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/client_assets/img/icon/favicon.png}">
+
+    <link rel="stylesheet" th:href="@{/client_assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/slicknav.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/animate.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/price_rangs.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/fontawesome-all.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/slick.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/style.css}">
+    <style>
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-below-paragraph {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .fit-image {
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+        }
+
+        .image-below-paragraph {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+        /*reset css*/
+        div, label {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+
+        /****** Style Star Rating Widget *****/
+        #rating {
+            border: none;
+            float: left;
+        }
+
+        #rating > input {
+            display: none;
+        }
+
+        /*ẩn input radio - vì chúng ta đã có label là GUI*/
+        #rating > label:before {
+            margin: 5px;
+            font-size: 1.25em;
+            font-family: FontAwesome;
+            display: inline-block;
+            content: "\f005";
+        }
+
+        #rating > .half:before {
+            content: "\f089";
+            position: absolute;
+        }
+
+        #rating > label {
+            color: #ddd;
+            float: right;
+        }
+
+        #rating > input:checked ~ label,
+        #rating:not(:checked) > label:hover,
+        #rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+
+        #rating > input:checked + label:hover,
+        #rating > input:checked ~ label:hover,
+        #rating > label:hover ~ input:checked ~ label,
+        #rating > input:checked ~ label:hover ~ label {
+            color: #FFED85;
+        }
+    </style>
+</head>
+<body>
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img th:src="@{/client_assets/img/icon/loder.png}" alt="loder">
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="header-area">
+        <div class="header-top d-none d-sm-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div
+                                class="d-flex justify-content-between flex-wrap align-items-center"
+                        >
+                            <div class="header-info-left">
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-info-right d-flex">
+                                <ul class="order-list">
+                                    <li><span th:text="'Hello, ' + ${email}"></span></li>
+                                </ul>
+                                <ul class="header-social">
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mid header-sticky">
+            <div class="container">
+                <div class="menu-wrapper">
+
+                    <div class="logo">
+                        <a th:href="@{/admin/home}"><img th:src="@{/client_assets/img/logo/logo.png}" alt></a>
+                    </div>
+
+                    <div class="header-right">
+                        <ul>
+                            <li>
+                                <div class="nav-search search-switch hearer_icon">
+                                    <a id="search_1" href="javascript:void(0)">
+                                        <span class="flaticon-search"></span>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="search_input" id="search_input_box">
+                    <form class="search-inner d-flex justify-content-between">
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="search_input"
+                                placeholder="Search Here"
+                        />
+                        <button type="submit" class="btn"></button>
+                        <span
+                                class="ti-close"
+                                id="close_search"
+                                title="Close Search"
+                        ></span>
+                    </form>
+                </div>
+
+                <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom text-center">
+            <p>
+                Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer
+                <a href="#" class="browse-btn">Shop Now</a>
+            </p>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="hero-area section-bg2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="slider-area">
+                        <div
+                                class="slider-height2 slider-bg4 d-flex align-items-center justify-content-center"
+                        >
+                            <div class="hero-caption hero-caption2">
+                                <h2>Product Details</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-area2 pt-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="single-services d-flex align-items-center mb-0">
+                                <input type="hidden" th:field="*{product.id}">
+                                <div class="features-img">
+                                    <img th:src="${product.thumbnail}" class="fit-image" alt/>
+                                </div>
+                                <div class="features-caption">
+                                    <h3 th:text="${product.productName}"></h3>
+                                    <div class="price">
+                                        <span th:text="${#numbers.formatDecimal(product.salePrice, 0, 'POINT', 0, 'COMMA') + ' VND'}"></span>
+                                    </div>
+                                    <div class="review">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <p>(120 Review)</p>
+                                    </div>
+                                    <a href="#" class="white-btn mr-10">Add
+                                        to Cart</a>
+                                    <a href="#" class="border-btn share-btn"
+                                    ><i class="fas fa-share-alt"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="our-client section-padding best-selling">
+        <div class="container">
+            <p th:text="${product.description}"></p>
+            <div th:each="imageEntity : ${imageEntities}" class="image-below-paragraph">
+                <div class="image-container">
+                    <img th:src="@{${imageEntity.imageEntity.imageLink}}" alt=""
+                         style="max-width: 480px; max-height: 480px;"/>
+                </div>
+                <div class="description" style="align-content: center">
+                    <p th:text="${imageEntity.description}"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-left: 50px">
+        <div class="comments-area">
+            <input type="hidden" th:value="${userId}">
+            <h4 th:text="${countComments} + ' Comments'"></h4>
+            <div class="comment-list" th:each="comment : ${comments}">
+                <input type="hidden" th:value="${comment.id}">
+                <div class="single-comment justify-content-between d-flex">
+                    <div class="user justify-content-between d-flex">
+                        <div class="thumb">
+                            <img th:src="${comment.avatar}" alt/>
+                        </div>
+                        <div class="desc">
+                            <p class="comment" th:text="${comment.comment}">
+                            <p class="ratedStar" th:text="'Đánh giá: ' + ${comment.ratedStar} + ' Sao'"></p>
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <h5>
+                                        <a href="#" th:text="${comment.fullName}"></a>
+                                    </h5>
+                                    <p class="date" th:text="${comment.createdDate}"></p>
+                                </div>
+                                <div th:if="${comment.replyDto == null}" class="reply-btn">
+                                    <button class="btn-add" th:style="'background-color: yellow; color: black'"
+                                            th:onclick="'showAddForm(\'' + ${comment.id} + '\')'">Trả lời
+                                    </button>
+                                </div>
+                                <div class="add-reply-form"
+                                     th:id="'addForm_' + ${comment.id}" style="display: none;">
+                                    <form th:action="@{/admin/reply/send}" method="post">
+                                        <input type="hidden" th:value="${comment.id}" name="commentId"
+                                               id="commentId">
+                                        <input type="hidden" th:value="${productId}" name="productIdAddReply"
+                                               id="productIdAddReply">
+                                        <textarea name="addReplyContent" id="addReplyContent"></textarea>
+                                        <button type="submit" class="btn-confirm"
+                                                style="background-color: green; color: white">Xác nhận
+                                        </button>
+                                        <button type="button" class="btn-close"
+                                                style="background-color: red; color: white"
+                                                th:onclick="'hideAddForm(\'' + ${comment.id} + '\')'">Đóng
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div th:if="${comment.replyDto != null}" style="margin-top: 50px; height: 500px">
+                            <div class="replies-section">
+                                <div style="margin-right: 1100px; margin-top: 150px; height: 350px; width: 350px">
+                                    <div class="comment-list">
+                                        <input type="hidden" th:value="${comment.replyDto.id}">
+                                        <div class="single-comment justify-content-between d-flex" th:if="${comment.replyDto.feedbackId == comment.id}">
+                                            <div class="user justify-content-between d-flex">
+                                                <div class="thumb">
+                                                    <img th:src="${comment.replyDto.avatarUser}" alt/>
+                                                </div>
+                                                <div class="desc">
+                                                    <p class="comment" th:text="${comment.replyDto.content}">
+                                                    </p>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="d-flex align-items-center">
+                                                            <h5>
+                                                                <a href="#" th:text="${comment.replyDto.email}"></a>
+                                                            </h5>
+                                                            <p class="date" th:text="${comment.replyDto.createdDate}"></p>
+                                                        </div>
+                                                        <input type="hidden" th:value="${productId}" name="productId"
+                                                               id="productId">
+                                                        <div th:if="${comment.replyDto.userId == userId}" class="edit-delete-buttons">
+                                                            <button class="btn-edit" th:style="'background-color: yellow; color: black'"
+                                                                    th:onclick="'showEditForm(\'' + ${comment.replyDto.id} + '\')'">Sửa
+                                                            </button>
+                                                            <div class="edit-reply-form"
+                                                                 th:id="'editForm_' + ${comment.replyDto.id}" style="display: none;">
+                                                                <form th:action="@{/admin/reply/update}" method="post">
+                                                                    <input type="hidden" th:value="${comment.replyDto.id}" name="replyId"
+                                                                           id="replyId">
+                                                                    <input type="hidden" th:value="${productId}" name="productIdEditReply"
+                                                                           id="productIdEditReply">
+                                                                    <textarea name="editedReplyContent" id="editedReplyContent"></textarea>
+                                                                    <button type="submit" class="btn-confirm"
+                                                                            style="background-color: green; color: white">Xác nhận
+                                                                    </button>
+                                                                    <button type="button" class="btn-close"
+                                                                            style="background-color: red; color: white"
+                                                                            th:onclick="'hideEditForm(\'' + ${comment.replyDto.id} + '\')'">Đóng
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+
+                                                            <button class="btn-delete" th:style="'background-color: red'"
+                                                                    th:onclick="'deleteReply(\'' + ${comment.replyDto.id} + '\')'">Xoá
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <br>
+
+
+                    <script>
+                        function deleteReply(id) {
+                            let isConfirmed = confirm('Bạn có chắc chắn muốn xoá bình luận trả lời này không?');
+                            let productId = document.getElementById('productId').value;
+                            if (isConfirmed) {
+                                window.location.href = '/admin/reply/delete/' + id + '?productId=' + productId;
+                            }
+                        }
+
+                        function showEditForm(id) {
+                            console.log('editForm_' + id);
+                            document.getElementById('editForm_' + id).style.display = 'block';
+                        }
+
+                        function hideEditForm(id) {
+                            document.getElementById('editForm_' + id).style.display = 'none';
+                        }
+
+                        function showAddForm(id) {
+                            console.log('addForm_' + id);
+                            document.getElementById('addForm_' + id).style.display = 'block';
+                        }
+
+                        function hideAddForm(id) {
+                            document.getElementById('addForm_' + id).style.display = 'none';
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-wrapper gray-bg">
+        <div class="footer-area footer-padding">
+            <section class="subscribe-area">
+                <div class="container">
+                    <div class="row justify-content-between subscribe-padding">
+                        <div class="col-xxl-3 col-xl-3 col-lg-4">
+                            <div class="subscribe-caption">
+                                <h3>Subscribe Newsletter</h3>
+                                <p>Subscribe newsletter to get 5% on all products.</p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
+                            <div class="subscribe-caption">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email"/>
+                                    <button class="subscribe-btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-4">
+                            <div class="footer-social">
+                                <a href="https://bit.ly/sai4ull"
+                                ><i class="fab fa-facebook"></i
+                                ></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-8">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-20">
+                                <div class="footer-logo mb-35">
+                                    <a href="index.html"
+                                    ><img src="assets/img/logo/logo2_footer.png" alt
+                                    /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Shop Men</h4>
+                                <ul>
+                                    <li><a href="#">Clothing Fashion</a></li>
+                                    <li><a href="#">Winter</a></li>
+                                    <li><a href="#">Summer</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Casual</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Shop Women</h4>
+                                <ul>
+                                    <li><a href="#">Clothing Fashion</a></li>
+                                    <li><a href="#">Winter</a></li>
+                                    <li><a href="#">Summer</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Casual</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Baby Collection</h4>
+                                <ul>
+                                    <li><a href="#">Clothing Fashion</a></li>
+                                    <li><a href="#">Winter</a></li>
+                                    <li><a href="#">Summer</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Casual</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a th:href="@{/client/order}">Track Your Order</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Carrier</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-copy-right text-center">
+                                <p>
+                                    Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
+                                    All rights reserved | This template is made with
+                                    <i
+                                            class="fa fa-heart color-danger"
+                                            aria-hidden="true"
+                                    ></i>
+                                    by
+                                    <a
+                                            href="https://colorlib.com"
+                                            target="_blank"
+                                            rel="nofollow noopener"
+                                    >Colorlib</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="back-top">
+    <a class="wrapper" title="Go to Top" href="#">
+        <div class="arrows-container">
+            <div class="arrow arrow-one"></div>
+            <div class="arrow arrow-two"></div>
+        </div>
+    </a>
+</div>
+
+<script th:src="@{/client_assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+<script th:src="@{/client_assets/js/vendor/jquery-1.12.4.min.js}"></script>
+<script th:src="@{/client_assets/js/popper.min.js}"></script>
+<script th:src="@{/client_assets/js/bootstrap.min.js}"></script>
+
+<script th:src="@{/client_assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/client_assets/js/slick.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.slicknav.min.js}"></script>
+
+<script th:src="@{/client_assets/js/wow.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.magnific-popup.js}"></script>
+<script th:src="@{/client_assets/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.counterup.min.js}"></script>
+<script th:src="@{/client_assets/js/waypoints.min.js}"></script>
+<script th:src="@{/client_assets/js/price_rangs.js}"></script>
+
+<script th:src="@{/client_assets/js/contact.js}"></script>
+<script th:src="@{/client_assets/js/jquery.form.js}"></script>
+<script th:src="@{/client_assets/js/jquery.validate.min.js}"></script>
+<script th:src="@{/client_assets/js/mail-script.js}"></script>
+<script th:src="@{/client_assets/js/jquery.ajaxchimp.min.js}"></script>
+
+<script th:src="@{/client_assets/js/plugins.js}"></script>
+<script th:src="@{/client_assets/js/main.js}"></script>
+
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "UA-23581568-13");
+</script>
+<script>
+    function calcRate(r) {
+        const f = ~~r,
+            id = 'star' + f + (r % f ? 'half' : '')
+        id && (document.getElementById(id).checked = !0)
+    }
+</script>
+<script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"84261b39a8b0079f","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

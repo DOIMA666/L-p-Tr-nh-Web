@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Shop | eCommers</title>
+  <meta name="description" content />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" th:href="@{/client_assets/img/icon/favicon.png}">
+
+  <link rel="stylesheet" th:href="@{/client_assets/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/owl.carousel.min.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/slicknav.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/flaticon.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/animate.min.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/price_rangs.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/magnific-popup.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/fontawesome-all.min.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/themify-icons.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/slick.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/nice-select.css}">
+  <link rel="stylesheet" th:href="@{/client_assets/css/style.css}">
+  <style>
+    .quantity-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .quantity-container .tru,
+    .quantity-container .cong {
+      flex: 0 0 auto;
+    }
+    .quantity-container .quantity-amount {
+      flex: 0 0 60px;
+    }
+  </style>
+
+</head>
+<body>
+<div id="preloader-active">
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="preloader-inner position-relative">
+      <div class="preloader-circle"></div>
+      <div class="preloader-img pere-text">
+        <img th:src="@{/client_assets/img/icon/loder.png}" alt="loder">
+      </div>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="header-area">
+    <div class="header-top d-none d-sm-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div
+                    class="d-flex justify-content-between flex-wrap align-items-center"
+            >
+              <div class="header-info-left">
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </div>
+              <div class="header-info-right d-flex">
+                <ul class="order-list">
+                  <li><span th:text="'Hello, ' + ${email}"></span></li>
+                  <li><a th:href="@{/client/order}">Track Your Order</a></li>
+
+                </ul>
+                <ul class="header-social">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-mid header-sticky">
+      <div class="container">
+        <div class="menu-wrapper">
+
+          <div class="logo">
+            <a th:href="@{/client/home}"><img th:src="@{/client_assets/img/logo/logo.png}" alt></a>
+          </div>
+
+          <div class="main-menu d-none d-lg-block">
+            <nav>
+              <ul id="navigation">
+                <li><a th:href="@{/client/home}">Home</a></li>
+                <li><a th:href="@{/client/product}">Products</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="header-right">
+            <ul>
+              <li>
+                <div class="nav-search search-switch hearer_icon">
+                  <a id="search_1" href="javascript:void(0)">
+                    <span class="flaticon-search"></span>
+                  </a>
+                </div>
+              </li>
+              <li><a th:href="@{/client/profile}"><span class="flaticon-user"></span></a></li>
+              <li class="cart"><a th:href="@{/client/cart}"><span class="flaticon-shopping-cart"></span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="search_input" id="search_input_box">
+          <form class="search-inner d-flex justify-content-between">
+            <input
+                    type="text"
+                    class="form-control"
+                    id="search_input"
+                    placeholder="Search Here"
+            />
+            <button type="submit" class="btn"></button>
+            <span
+                    class="ti-close"
+                    id="close_search"
+                    title="Close Search"
+            ></span>
+          </form>
+        </div>
+
+        <div class="col-12">
+          <div class="mobile_menu d-block d-lg-none"></div>
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom text-center">
+      <p>
+        Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer
+        <a href="#" class="browse-btn">Shop Now</a>
+      </p>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="hero-area section-bg2">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="slider-area">
+            <div
+                    class="slider-height2 slider-bg4 d-flex align-items-center justify-content-center"
+            >
+              <div class="hero-caption hero-caption2">
+                <h2>Cart</h2>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item">
+                      <a th:href="@{/client/home}">Home</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">Cart</a></li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cart_area">
+    <div class="container">
+      <div class="cart_inner">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+
+              <th scope="col">
+                <div class="form-check">
+                  <input class="form-check-input" id="selectAllCheckbox" onclick="toggleCheckboxes(this)" type="checkbox"
+                         value="" >
+                </div>
+              </th>
+              <th scope="col">Ảnh</th>
+              <th scope="col">Sản phẩm</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Số lượng</th>
+              <th scope="col">Thành tiền</th>
+              <th scope="col">Xoá</th>
+            </tr>
+            </thead>
+            <!-- Trong thẻ <tbody> của bảng -->
+            <tbody th:each="product : ${products}">
+            <input type="hidden" name="idGioHangChiTiet" th:value="${product.id}">
+            <tr>
+              <td>
+                <div class="form-check">
+                  <span class="id" hidden th:data-id="${product.id}"></span>
+                  <span class="id-cart" hidden th:data-id="${product.cartId}"></span>
+                  <input class="form-check-input" name="options[]" id="checkboxID" th:value="${product.id}" onchange="updatePrice(this)" type="checkbox">
+                </div>
+              </td>
+              <td>
+                <div class="media product-thumbnail">
+                  <div class="d-flex">
+                    <!-- Thêm Thymeleaf để lấy đường dẫn hình ảnh từ sản phẩm -->
+                    <img th:src="@{${product.thumbnail}}" alt="Product Image" />
+                  </div>
+                  <div class="media-body">
+                    <!-- Hiển thị tên sản phẩm -->
+
+                  </div>
+                </div>
+              </td>
+              <td class="product-name">
+                <p th:text="${product.productName}"></p>
+              </td>
+              <td class="price" th:text="${#numbers.formatDecimal(product.priceOfOne, 0, 'POINT', 0, 'COMMA') + ' VND'}">
+              </td>
+              <input type="hidden" class="priceValue" th:value="${product.priceOfOne}">
+              <td>
+                <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px">
+                  <div class="tru" onclick="handlerChange(this)">
+                    <button class="btn btn-outline-black" type="button">&minus;</button>
+                  </div>
+
+                  <input
+                          aria-describedby="button-addon1"
+                          aria-label="Example text with button addon"
+                          class="form-control text-center quantity-amount"
+                          placeholder=""
+                          th:value="${product.quantity}"
+                          type="text"
+                          name="soLuong"
+                          onchange="handleChangeOfInput(this)"
+                          style="width: 60px; margin: 0 5px; text-align: center; margin-top: 30px; margin-right: 50px; margin-bottom: 30px"
+                  />
+
+                  <div class="cong" onclick="handlerChange(this)">
+                    <button class="btn btn-outline-black" type="button">&plus;</button>
+                  </div>
+                </div>
+
+
+              </td>
+
+              <td>
+                <!-- Hiển thị tổng giá của sản phẩm (số lượng * giá) -->
+                <h5 class="thanhtien" th:text="${#numbers.formatDecimal(product.totalPrice, 0, 'POINT', 0, 'COMMA') + ' VND'}"></h5>
+              </td>
+              <input type="hidden" class="thanhtienValue" th:value="${product.totalPrice}">
+              <td>
+                <button class="btn btn-black btn-sm delete-button confirmDelete" th:attr="data-id=${product.id}">
+                  X
+                </button>
+              </td>
+
+            </tr>
+            </tbody>
+
+          </table>
+          <div class="checkout_btn_inner float-right">
+            <a class="btn" th:href="@{/client/product}">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="col-md-6 pl-5" style="margin-left: 330px;">
+      <div class="row justify-content-end">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-12 text-right border-bottom mb-5">
+              <h3 class="text-black h4 text-uppercase">Giỏ hàng</h3>
+            </div>
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-md-6">
+              <span class="text-black">Tổng tiền</span>
+            </div>
+            <div class="col-md-6 text-right">
+              <strong class="text-black total">0</strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-black btn-lg py-3 btn-block" onclick="checkOut()">
+                Mua hàng
+              </button>
+
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel1">Thông báo</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Vui lòng chọn ít nhất một mục để tiếp tục.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="quantityExceedErrorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel2">Lỗi Số Lượng</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="quantityExceedErrorMessage">Số lượng sản phẩm trong giỏ hàng đang vượt quá số lượng tồn kho.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+</main>
+<footer>
+  <div class="footer-wrapper gray-bg">
+    <div class="footer-area footer-padding">
+      <section class="subscribe-area">
+        <div class="container">
+          <div class="row justify-content-between subscribe-padding">
+            <div class="col-xxl-3 col-xl-3 col-lg-4">
+              <div class="subscribe-caption">
+                <h3>Subscribe Newsletter</h3>
+                <p>Subscribe newsletter to get 5% on all products.</p>
+              </div>
+            </div>
+            <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
+              <div class="subscribe-caption">
+                <form action="#">
+                  <input type="text" placeholder="Enter your email" />
+                  <button class="subscribe-btn">Subscribe</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-xxl-2 col-xl-2 col-lg-4">
+              <div class="footer-social">
+                <a href="https://bit.ly/sai4ull"
+                ><i class="fab fa-facebook"></i
+                ></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-8">
+            <div class="single-footer-caption mb-50">
+              <div class="single-footer-caption mb-20">
+                <div class="footer-logo mb-35">
+                  <a href="index.html"
+                  ><img src="assets/img/logo/logo2_footer.png" alt
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Shop Men</h4>
+                <ul>
+                  <li><a href="#">Clothing Fashion</a></li>
+                  <li><a href="#">Winter</a></li>
+                  <li><a href="#">Summer</a></li>
+                  <li><a href="#">Formal</a></li>
+                  <li><a href="#">Casual</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Shop Women</h4>
+                <ul>
+                  <li><a href="#">Clothing Fashion</a></li>
+                  <li><a href="#">Winter</a></li>
+                  <li><a href="#">Summer</a></li>
+                  <li><a href="#">Formal</a></li>
+                  <li><a href="#">Casual</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Baby Collection</h4>
+                <ul>
+                  <li><a href="#">Clothing Fashion</a></li>
+                  <li><a href="#">Winter</a></li>
+                  <li><a href="#">Summer</a></li>
+                  <li><a href="#">Formal</a></li>
+                  <li><a href="#">Casual</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a th:href="@{/client/order}">Track Your Order</a></li>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Carrier</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-area">
+      <div class="container">
+        <div class="footer-border">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="footer-copy-right text-center">
+                <p>
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This template is made with
+                  <i
+                          class="fa fa-heart color-danger"
+                          aria-hidden="true"
+                  ></i>
+                  by
+                  <a
+                          href="https://colorlib.com"
+                          target="_blank"
+                          rel="nofollow noopener"
+                  >Colorlib</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="back-top">
+  <a class="wrapper" title="Go to Top" href="#">
+    <div class="arrows-container">
+      <div class="arrow arrow-one"></div>
+      <div class="arrow arrow-two"></div>
+    </div>
+  </a>
+</div>
+
+<script th:src="@{/client_assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+<script th:src="@{/client_assets/js/vendor/jquery-1.12.4.min.js}"></script>
+<script th:src="@{/client_assets/js/popper.min.js}"></script>
+<script th:src="@{/client_assets/js/bootstrap.min.js}"></script>
+
+<script th:src="@{/client_assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/client_assets/js/slick.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.slicknav.min.js}"></script>
+
+<script th:src="@{/client_assets/js/wow.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.magnific-popup.js}"></script>
+<script th:src="@{/client_assets/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.counterup.min.js}"></script>
+<script th:src="@{/client_assets/js/waypoints.min.js}"></script>
+<script th:src="@{/client_assets/js/price_rangs.js}"></script>
+
+<script th:src="@{/client_assets/js/contact.js}"></script>
+<script th:src="@{/client_assets/js/jquery.form.js}"></script>
+<script th:src="@{/client_assets/js/jquery.validate.min.js}"></script>
+<script th:src="@{/client_assets/js/mail-script.js}"></script>
+<script th:src="@{/client_assets/js/jquery.ajaxchimp.min.js}"></script>
+
+<script th:src="@{/client_assets/js/plugins.js}"></script>
+<script th:src="@{/client_assets/js/main.js}"></script>
+
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-23581568-13");
+
+
+
+
+
+  function updateQuantityInDatabase(productId, quantity) {
+    $.ajax({
+      type: 'POST',
+      url: '/client/cart/updateQuantity',
+      data: { idGioHangChiTiet: productId, soLuong: quantity },
+      success: function (response) {
+        console.log('Update successful');
+      },
+      error: function (error) {
+        console.error('Error updating quantity:', error.responseText);
+      }
+    });
+  }
+
+
+  function updateQuantity(input) {
+    let quantity = input.value;
+
+    if (isNaN(quantity) || quantity < 1) {
+      // Display the modal
+      $('#quantityModal').modal('show');
+      // Reset the input value to 1
+      input.value = 1;
+      return;
+    }
+
+    let productId = input.parentElement.parentElement.parentElement.querySelector("input[type='checkbox']").value;
+
+    // Call the updateQuantityInDatabase function to update the quantity in the database
+    updateQuantityInDatabase(productId, quantity);
+
+    // Update the total price and any other necessary UI changes
+    updatePrice();
+  }
+
+  function formatCurrency(amount) {
+    return new Intl.NumberFormat('vi-VN', {
+      style: 'currency',
+      currency: 'VND'
+    }).formatToParts(amount).map(part => {
+      if (part.type === 'currency') {
+        return ''; // Bỏ qua ký hiệu tiền tệ
+      }
+      return part.value;
+    }).join('');
+  }
+
+
+  function getTotalMoney() {
+    var checkboxes = document.querySelectorAll("tbody input[type='checkbox']");
+    let total = 0;
+    checkboxes.forEach(item => {
+      if (item.checked) {
+        let father = item.parentElement.parentElement.parentElement;
+        let price = father.querySelector(".thanhtienValue").value;
+        price = Number(price);
+        total += price;
+      }
+    })
+    return total;
+  }
+
+  function updatePrice() {
+    let totalE = document.querySelector(".total");
+    let price = getTotalMoney();
+    totalE.innerHTML = formatCurrency(price) + ' VND'; // Thêm ' VND' đằng sau giá trị
+  }
+
+  function handleChangeOfInput(input) {
+    let father = input.parentElement.parentElement.parentElement.parentElement;
+    let priceE = father.querySelector(".thanhtien");
+    let price = father.querySelector(".priceValue").value;
+    price = Number(price);
+
+    let qntE = father.querySelector(".quantity-amount");
+    let qnt = father.querySelector(".quantity-amount").value;
+
+    if (isNaN(qnt) || qnt < 1) {
+      // Display the modal
+      $('#quantityModal').modal('show');
+      input.value = 1;
+      return;
+    }
+
+    qntE.value = qnt;
+    father.querySelector(".thanhtienValue").value = price * qnt;
+    priceE.innerText = formatCurrency(price * qnt) + 'VND';
+
+    let checkBox = father.querySelector("input[type='checkbox']");
+    checkBox.checked && updatePrice();
+    updateQuantityInDatabase(checkBox.value, qnt);
+  }
+
+  function handlerChange(e) {
+    let className = e.getAttribute("class");
+    let father = e.parentElement.parentElement.parentElement.parentElement;
+    let priceE = father.querySelector(".thanhtien");
+    let price = father.querySelector(".priceValue").value;
+    price = Number(price);
+
+    let qntE = father.querySelector(".quantity-amount");
+    let qnt = father.querySelector(".quantity-amount").value;
+
+    if (className === "cong") {
+      qnt = Number(qnt) + 1;
+    } else {
+      qnt = Number(qnt) - 1;
+    }
+
+    if (isNaN(qnt) || qnt < 1) {
+      $('#quantityModal').modal('show');
+      return;
+    }
+
+    qntE.value = qnt;
+    father.querySelector(".thanhtienValue").value = price * qnt;
+    priceE.innerText = formatCurrency(price * qnt) + 'VND';
+
+    let checkBox = father.querySelector("input[type='checkbox']");
+    checkBox.checked && updatePrice();
+    updateQuantityInDatabase(checkBox.value, qnt);
+  }
+
+  function toggleCheckboxes(checkbox) {
+    var checkboxes = document.querySelectorAll("tbody input[type='checkbox']");
+
+    checkboxes.forEach(item => {
+      item.checked = checkbox.checked;
+      updatePrice();
+    });
+  }
+
+  document.querySelectorAll('.delete-button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      let id = this.getAttribute('data-id');
+
+      // Show the confirmation modal
+      $('#deleteConfirmationModal').modal('show');
+
+      // Set up event listener for the delete button in the modal
+      var deleteButtons = document.querySelectorAll('.delete-button');
+
+      deleteButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var productId = button.getAttribute('data-id');
+          var confirmDelete = confirm('Bạn có thật sự muốn xoá?');
+
+          if (confirmDelete) {
+            window.location.href = '/client/cart/delete/' + productId;
+          }
+        });
+      });
+    });
+  });
+
+  function checkOut() {
+    var checkboxes = document.querySelectorAll("tbody input[type='checkbox']");
+    var selectedOptions = [];
+
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        var productId = checkbox.value;
+        var quantityInput = checkbox.closest("tr").querySelector(".quantity-amount");
+        if (quantityInput) {
+          var quantity = quantityInput.value;
+          selectedOptions.push(encodeURIComponent(productId) + "-" + encodeURIComponent(quantity));
+        } else {
+          console.error("Quantity input not found for product with ID: " + productId);
+        }
+      }
+    });
+
+    if (selectedOptions.length === 0) {
+      return;
+    }
+
+    window.location.href = '/client/payment/checkout?options=' + selectedOptions.join(',');
+  }
+</script>
+<script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"84261ac02d5d079f","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

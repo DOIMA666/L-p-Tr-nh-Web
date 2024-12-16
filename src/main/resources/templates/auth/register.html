@@ -1,0 +1,199 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <title>Đăng Ký</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- App favicon -->
+    <!--    <link rel="shortcut icon" th:href="@{/static/images/favicon.ico}">-->
+
+    <!-- App css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/icons.min.css " rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/app.min.css " rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body class="authentication-bg bg-gradient">
+
+<div class="account-pages pt-5 mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-pattern">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center w-75 m-auto">
+                            <a th:href="@{/login}">
+                                <span><img th:src="@{/assets/img/logo.jpeg}" alt="" height="98"></span>
+                            </a>
+                            <h5 class="text-uppercase text-center font-bold mt-4">ĐĂNG KÝ</h5>
+                        </div>
+
+                        <!-- form -->
+                        <form action="mt-3" th:action="@{/save}" th:object="${user}" method="post" id="myForm">
+
+                            <div class="form-group">
+                                <label>Họ tên đầy đủ</label>
+                                <input class="form-control" type="text"
+                                       th:field="*{fullName}"
+                                       id="fullName"
+                                       placeholder="Nhập họ tên đầy đủ: " required/>
+                                <div class="alert alert-warning" th:if="${#fields.hasErrors('fullName')}"
+                                     th:errors="*{fullName}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ngày sinh</label>
+                                <input class="form-control" type="date" id="dob" th:field="*{dob}"
+                                       placeholder="Chọn ngày sinh" required>
+                                <div class="alert alert-warning" th:if="${#fields.hasErrors('dob')}"
+                                     th:errors="*{dob}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Địa chỉ email</label>
+                                <input class="form-control" type="email" th:field="*{email}"
+                                       id="email" required
+                                       placeholder="Nhập email: ">
+                                <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}"
+                                     th:errors="*{email}">
+                                </div>
+                                <p style="color: red" th:text="${mess}"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="radio radio-info form-check-inline">
+                                    <input type="radio" id="male" th:field="*{gender}"
+                                           value="1" name="gender" checked>
+                                    <label for="male">Nam </label>
+                                </div>
+                                <div class="radio form-check-inline">
+                                    <input type="radio" id="female" th:field="*{gender}"
+                                           value="0" name="gender">
+                                    <label for="female"> Nữ </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="text" class="form-control" id="phone" name="phone"
+                                       placeholder="(0)123 456 7890"
+                                       oninput="this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > 10) this.value = this.value.slice(0, 10);"
+                                       th:field="*{phone}">
+                                <small class="text-danger error-phone"></small>
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ cụ thể</label>
+                                <input class="form-control" type="text"
+                                       th:field="*{address}"
+                                       id="cardId"
+                                       placeholder="Nhập địa chỉ: " required/>
+                                <div class="alert alert-warning" th:if="${#fields.hasErrors('address')}"
+                                     th:errors="*{address}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <script>
+                                    var check = function () {
+                                        if (document.getElementById('password').value.trim() !== '' && !isValidPassword(document.getElementById('password').value)) {
+                                            document.querySelector('.error-password').innerText = 'Mật khẩu phải là dạng trống hoặc bao gồm ít nhất 6 kí tự, có cả chữ hoa, chữ thường, số và kí tự đặc biệt';
+                                        }
+                                        else {
+                                            document.querySelector('.error-password').innerText = "";
+                                        }
+
+                                        if (document.getElementById('password').value ===
+                                            document.getElementById('confirm_password').value) {
+                                            document.getElementById('message').style.color = 'green';
+                                            document.getElementById('message').innerHTML = 'Mật Khẩu Trùng Khớp!';
+                                        } else {
+                                            document.getElementById('message').style.color = 'red';
+                                            document.getElementById('message').innerHTML = 'Mật Khẩu Không Trùng Khớp!';
+                                        }
+                                    }
+
+                                </script>
+                                <label for="password">Mật khẩu</label>
+                                <input class="form-control" type="password" th:field="*{password}"
+                                       required id="password" name="password"
+                                       onkeyup='check();'
+                                       placeholder="Nhập mật khẩu: ">
+                                <small class="text-danger error-password"></small>
+                            </div>
+                            <div class="form-group">
+                                <label> Xác nhận mật khẩu: </label>
+                                <input class="form-control" type="password" required id="confirm_password"
+                                       name="confirm_password"
+                                       onkeyup='check();'
+                                       placeholder="Xác nhận mật khẩu: ">
+                                <span id='message'></span>
+                            </div>
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-gradient btn-block" type="submit"> Đăng ký xác nhận
+                                </button>
+                            </div>
+                        </form>
+                        <div class="row mt-4">
+                            <div class="col-sm-12 text-center">
+                                <p class="text-muted mb-0">Đã có tài khoản? <a th:href="@{/login}"
+                                                                               class="text-dark ml-1"><b>Đăng
+                                    Nhập</b></a></p>
+                            </div>
+                        </div>
+
+                    </div> <!-- end card-body -->
+                </div>
+                <!-- end card -->
+
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end page -->
+
+<!-- Vendor js -->
+<script src="assets/js/vendor.min.js"></script>
+
+<!-- App js -->
+<script src="assets/js/app.min.js"></script>
+<script src="assets/js/myjs.js"></script>
+<script>
+    document.getElementById('myForm').addEventListener('submit', function (event) {
+        var passwordInput = document.getElementById('password');
+        var password = passwordInput.value;
+
+        if (password.trim() !== '' && !isValidPassword(password)) {
+            document.querySelector('.error-password').innerText = 'Mật khẩu phải là dạng trống hoặc bao gồm ít nhất 6 kí tự, có cả chữ hoa, chữ thường, số và kí tự đặc biệt';
+            event.preventDefault();
+        }
+
+    });
+
+    function isValidPassword(password) {
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+        return passwordRegex.test(password);
+    }
+
+    const inputPhone = document.getElementById('phone');
+    const errorPhone = inputPhone.nextElementSibling;
+
+    inputPhone.addEventListener('blur', () => {
+
+        if (!inputPhone.value.match(inputPhone.pattern)) {
+            errorPhone.textContent = 'Số điện thoại gồm 10 số';
+        } else {
+            errorPhone.textContent = '';
+        }
+    });
+</script>
+</body>
+
+</html>

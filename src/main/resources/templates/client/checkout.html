@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Shop | eCommers</title>
+    <meta name="description" content/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/client_assets/img/icon/favicon.png}">
+
+    <link rel="stylesheet" th:href="@{/client_assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/slicknav.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/animate.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/price_rangs.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/fontawesome-all.min.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/slick.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{/client_assets/css/style.css}">
+    <style>
+        #province,
+        #district,
+        #ward {
+            width: 428px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img th:src="@{/client_assets/img/icon/loder.png}" alt="loder">
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="header-area">
+        <div class="header-top d-none d-sm-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div
+                                class="d-flex justify-content-between flex-wrap align-items-center"
+                        >
+                            <div class="header-info-left">
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-info-right d-flex">
+                                <ul class="order-list">
+                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a th:href="@{/client/order}">Track Your Order</a></li>
+                                </ul>
+                                <ul class="header-social">
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mid header-sticky">
+            <div class="container">
+                <div class="menu-wrapper">
+
+                    <div class="logo">
+                        <a th:href="@{/client/home}"><img th:src="@{/client_assets/img/logo/logo.png}" alt></a>
+                    </div>
+
+                    <div class="main-menu d-none d-lg-block">
+                        <nav>
+                            <ul id="navigation">
+                                <li><a th:href="@{/client/home}">Home</a></li>
+                                <li><a th:href="@{/client/product}">Products</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="header-right">
+                        <ul>
+                            <li>
+                                <div class="nav-search search-switch hearer_icon">
+                                    <a id="search_1" href="javascript:void(0)">
+                                        <span class="flaticon-search"></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li><a th:href="@{/client/profile}"><span class="flaticon-user"></span></a></li>
+                            <li class="cart"><a th:href="@{/client/cart}"><span
+                                    class="flaticon-shopping-cart"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search_input" id="search_input_box">
+                    <form class="search-inner d-flex justify-content-between">
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="search_input"
+                                placeholder="Search Here"
+                        />
+                        <button type="submit" class="btn"></button>
+                        <span
+                                class="ti-close"
+                                id="close_search"
+                                title="Close Search"
+                        ></span>
+                    </form>
+                </div>
+
+                <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom text-center">
+            <p>
+                Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer
+                <a href="#" class="browse-btn">Shop Now</a>
+            </p>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="hero-area section-bg2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="slider-area">
+                        <div
+                                class="slider-height2 slider-bg4 d-flex align-items-center justify-content-center"
+                        >
+                            <div class="hero-caption hero-caption2">
+                                <h2>Checkout</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item">
+                                            <a th:href="@{/client/home}">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="#">Checkout</a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="checkout_area">
+        <div class="container">
+            <div class="billing_details">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h3>Billing Details</h3>
+
+                        <div class="col-md-6 form-group p_star">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="first"
+                                    name="name"
+                                    placeholder="Họ tên đầy đủ"
+                                    th:value="${customer.fullName}"
+                            />
+                        </div>
+
+                        <div class="col-md-6 form-group p_star">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="number"
+                                    name="number"
+                                    placeholder="Số điện thoại"
+                                    th:value="${customer.phoneNumber}"
+                            />
+                        </div>
+
+                        <div class="col-md-6 form-group p_star">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    th:value="${email}"
+                            />
+                        </div>
+
+                        <div class="col-md-6 form-group p_star">
+                            <select name="" id="province" style="display: block !important;"></select>
+                            <div id="error-province" style="color: red; display: none;">Vui lòng chọn tỉnh/thành phố.</div>
+                            <br>
+
+                            <select name="" id="district" style="display: block !important;">
+                                <option value="">Chọn quận</option>
+                            </select>
+                            <div id="error-district" style="color: red; display: none;">Vui lòng chọn quận/huyện.</div>
+                            <br>
+
+                            <select name="" id="ward" style="display: block !important;">
+                                <option value="">Chọn phường</option>
+                            </select>
+                            <div id="error-ward" style="color: red; display: none;">Vui lòng chọn phường/xã.</div>
+                            <br>
+
+                            <input type="hidden" id="saveProvince" name="saveProvince">
+                            <input type="hidden" id="saveDistrict" name="saveDistrict">
+                            <input type="hidden" id="saveWard" name="saveWard">
+
+                        </div>
+                        <script>
+                            function checkLocation() {
+                                // Kiểm tra xem người dùng đã chọn giá trị trong từng dropdown hay chưa
+                                let provinceValue = document.getElementById('province').value;
+                                let districtValue = document.getElementById('district').value;
+                                let wardValue = document.getElementById('ward').value;
+
+                                document.getElementById('error-province').style.display = 'none';
+                                document.getElementById('error-district').style.display = 'none';
+                                document.getElementById('error-ward').style.display = 'none';
+
+                                if (provinceValue === '') {
+                                    document.getElementById('error-province').style.display = 'block';
+                                }
+
+                                if (districtValue === '') {
+                                    document.getElementById('error-district').style.display = 'block';
+                                }
+
+                                if (wardValue === '') {
+                                    document.getElementById('error-ward').style.display = 'block';
+                                }
+                            }
+                        </script>
+                        <div class="col-md-6 form-group p_star">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    name="detail"
+                                    id="detail"
+                                    placeholder="Địa chỉ cụ thể"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="order_box">
+                            <h2>Your Order</h2>
+                            <ul class="list">
+                                <li>
+                                    <a href="#">Product<span>Total</span> </a>
+                                </li>
+                                <li th:each="product : ${products.getCartDetailEntities()}">
+                                    <a href="#">
+                                        <span th:text="${product.productEntity.productName}"></span>
+                                        <span class="middle">x <span th:text="${product.quantity}"></span></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="list list_2">
+                                <input type="hidden" th:value="${subtotal}" id="subtotalInput" name="subtotalInput">
+                                <input type="hidden" id="subtotalResult" name="subtotalResult">
+                                <input type="hidden" id="totalResult" name="totalResult">
+
+                                <li>
+                                    <a href="#">Subtotal <span
+                                            th:text="${#numbers.formatDecimal(subtotal, 0, 'POINT', 0, 'COMMA') + ' VND'}"></span></a>
+                                </li>
+
+
+                                <li id="totalContainer">
+                                    <a href="#">Total <span id="totalText"></span></a>
+                                </li>
+                            </ul>
+
+                            <div class="payment_item active">
+                                <div class="radion_btn">
+                                    <input type="radio" id="f-option6" name="selector"/>
+                                    <label for="f-option6">VNPay </label>
+                                    <img src="assets/img/gallery/card.jpg" alt/>
+                                    <div class="check"></div>
+                                </div>
+                                <p>
+                                    Please send a check to Store Name, Store Street, Store
+                                    Town, Store State / County, Store Postcode.
+                                </p>
+                            </div>
+                            <div id="error-vnpay" style="color: red; display: none;">Bạn chưa bấm xác nhận thanh toán VnPay</div>
+
+                            <div class="creat_account checkout-cap">
+                                <input type="checkbox" id="f-option8" name="selector"/>
+                                <label for="f-option8"
+                                >I’ve read and accept the
+                                    <a href="#">terms & conditions*</a>
+                                </label>
+                            </div>
+                            <button class="btn w-100" onclick="pay()" id="pay-btn">Proceed to VNPay</button>
+                        </div>
+                        <script th:inline="javascript">
+                            var totalValue = /*[[${total}]]*/ null;
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-wrapper gray-bg">
+        <div class="footer-area footer-padding">
+            <section class="subscribe-area">
+                <div class="container">
+                    <div class="row justify-content-between subscribe-padding">
+                        <div class="col-xxl-3 col-xl-3 col-lg-4">
+                            <div class="subscribe-caption">
+                                <h3>Subscribe Newsletter</h3>
+                                <p>Subscribe newsletter to get 5% on all products.</p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
+                            <div class="subscribe-caption">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email"/>
+                                    <button class="subscribe-btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-4">
+                            <div class="footer-social">
+                                <a href="https://bit.ly/sai4ull"
+                                ><i class="fab fa-facebook"></i
+                                ></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-8">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-20">
+                                <div class="footer-logo mb-35">
+                                    <a href="index.html"
+                                    ><img src="assets/img/logo/logo2_footer.png" alt
+                                    /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Shop Men</h4>
+                                <ul>
+                                    <li><a href="#">Clothing Fashion</a></li>
+                                    <li><a href="#">Winter</a></li>
+                                    <li><a href="#">Summer</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Casual</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Shop Women</h4>
+                                <ul>
+                                    <li><a href="#">Clothing Fashion</a></li>
+                                    <li><a href="#">Winter</a></li>
+                                    <li><a href="#">Summer</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Casual</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Baby Collection</h4>
+                                <ul>
+                                    <li><a href="#">Clothing Fashion</a></li>
+                                    <li><a href="#">Winter</a></li>
+                                    <li><a href="#">Summer</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Casual</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a th:href="@{/client/order}">Track Your Order</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Carrier</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-copy-right text-center">
+                                <p>
+                                    Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
+                                    All rights reserved | This template is made with
+                                    <i
+                                            class="fa fa-heart color-danger"
+                                            aria-hidden="true"
+                                    ></i>
+                                    by
+                                    <a
+                                            href="https://colorlib.com"
+                                            target="_blank"
+                                            rel="nofollow noopener"
+                                    >Colorlib</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="back-top">
+    <a class="wrapper" title="Go to Top" href="#">
+        <div class="arrows-container">
+            <div class="arrow arrow-one"></div>
+            <div class="arrow arrow-two"></div>
+        </div>
+    </a>
+</div>
+
+<script th:src="@{/client_assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+<script th:src="@{/client_assets/js/vendor/jquery-1.12.4.min.js}"></script>
+<script th:src="@{/client_assets/js/popper.min.js}"></script>
+<script th:src="@{/client_assets/js/bootstrap.min.js}"></script>
+
+<script th:src="@{/client_assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/client_assets/js/slick.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.slicknav.min.js}"></script>
+
+<script th:src="@{/client_assets/js/wow.min.js}"></script>
+<script th:src="@{/client_assets/js/jquery.magnific-popup.js}"></script>
+<script th:src="@{/client_assets/js/jquery.counterup.min.js}"></script>
+<script th:src="@{/client_assets/js/waypoints.min.js}"></script>
+<script th:src="@{/client_assets/js/price_rangs.js}"></script>
+
+<script th:src="@{/client_assets/js/contact.js}"></script>
+<script th:src="@{/client_assets/js/jquery.form.js}"></script>
+<script th:src="@{/client_assets/js/jquery.validate.min.js}"></script>
+<script th:src="@{/client_assets/js/mail-script.js}"></script>
+<script th:src="@{/client_assets/js/jquery.ajaxchimp.min.js}"></script>
+
+<script th:src="@{/client_assets/js/plugins.js}"></script>
+<script th:src="@{/client_assets/js/main.js}"></script>
+<script th:src="@{/client_assets/js/jquery-3.7.1.min.js}"></script>
+<script th:src="@{/client_assets/js/axios.min.js}"></script>
+
+<script>
+    $(document).ready(function () {
+        let provinceName = '';
+        let districtName = '';
+        let wardName = '';
+        let fromDistrictId = 1488;
+        let toDistrictId = '';
+        let toWardCode = '';
+
+
+        const host = "https://online-gateway.ghn.vn/shiip/public-api/master-data/";
+        const token = '5f440054-8c34-11ee-af43-6ead57e9219a';
+
+        let callAPI = (api, params = {}) => {
+            const config = {
+                headers: {
+                    'token': token
+                },
+                params: params
+            };
+
+            return axios.get(host + api, config)
+                .then((response) => {
+                    return response.data;
+                })
+                .catch((error) => {
+                    console.error("Error calling API:", error);
+                });
+        };
+
+        let callAPICalculate = (params = {}) => {
+            const config = {
+                headers: {
+                    'token': token,
+                    'shop_id': 4724045
+                },
+                params: params
+            };
+
+            return axios.get("https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee", config)
+                .then((response) => {
+                    return response.data;
+                })
+                .catch((error) => {
+                    console.error("Error calling API:", error);
+                });
+        };
+
+        let callApiDistrict = (provinceId) => {
+            return callAPI("district", {'province_id': provinceId});
+        };
+
+        let callApiWard = (districtId) => {
+            return callAPI("ward", {'district_id': districtId});
+        };
+
+        let renderDataProvince = () => {
+            callAPI("province")
+                .then((data) => {
+                    let row = '<option disabled value="">Chọn tỉnh/thành</option>';
+                    data.data.forEach(element => {
+                        row += `<option value="${element.ProvinceID}">${element.ProvinceName}</option>`;
+                    });
+                    $("#province").html(row);
+                })
+                .catch((error) => {
+                    console.error("Error rendering province data:", error);
+                });
+        };
+
+
+        let renderDataDistrict = (array) => {
+            let row = '<option disabled value="">Chọn quận/huyện</option>';
+            array.data.forEach(element => {
+                row += `<option value="${element.DistrictID}">${element.DistrictName}</option>`;
+            });
+            $("#district").html(row);
+        };
+
+        let renderDataWard = (array) => {
+            let row = '<option disabled value="">Chọn xã/phường</option>';
+            array.data.forEach(element => {
+                row += `<option value="${element.WardCode}">${element.WardName}</option>`;
+            });
+            $("#ward").html(row);
+        };
+        renderDataProvince();
+
+        $("#province").change(() => {
+            const provinceId = $("#province").val();
+            provinceName = $("#province option:selected").text();
+            if (provinceId) {
+                callApiDistrict(provinceId)
+                    .then((data) => renderDataDistrict(data));
+            }
+        });
+
+        $("#district").change(() => {
+            const districtId = $("#district").val();
+            districtName = $("#district option:selected").text();
+            if (districtId) {
+                toDistrictId = districtId;
+                callApiWard(districtId)
+                    .then((data) => renderDataWard(data));
+            }
+        });
+
+        $("#ward").change(() => {
+            toWardCode = $("#ward").val();
+            wardName = $("#ward option:selected").text();
+
+            callAPICalculate({
+                "service_type_id": 2,
+                "insurance_value": 500000,
+                "coupon": null,
+                "from_district_id": fromDistrictId,
+                "to_district_id": toDistrictId,
+                "to_ward_code": "" + toWardCode,
+                "height": 12,
+                "length": 26,
+                "weight": 1000,
+                "width": 27
+            }).then(data => {
+                let subtotal = document.getElementById('subtotalInput').value;
+                document.getElementById('saveProvince').value = provinceName;
+                document.getElementById('saveDistrict').value = districtName;
+                document.getElementById('saveWard').value = wardName;
+
+                document.getElementById('subtotalResult').value = subtotal;
+                let totalAmount = parseFloat(subtotal);
+                document.getElementById('totalResult').value = totalAmount;
+
+                document.getElementById('totalText').textContent = `${totalAmount.toLocaleString('vi-VN')} VND`;
+            });
+        });
+
+    });
+</script>
+<script>
+    function pay() {
+        checkLocation();
+
+        let hasError = (
+            document.getElementById('error-province').style.display === 'block' ||
+            document.getElementById('error-district').style.display === 'block' ||
+            document.getElementById('error-ward').style.display === 'block'
+        );
+
+        if (!hasError) {
+            document.getElementById('error-province').style.display = 'none';
+            document.getElementById('error-district').style.display = 'none';
+            document.getElementById('error-ward').style.display = 'none';
+
+            if (document.getElementById('f-option6').checked) {
+                document.getElementById('error-vnpay').style.display = 'none';
+
+                let subtotal = document.getElementById('subtotalResult').value;
+                let total = document.getElementById('totalResult').value;
+                let province = document.getElementById('saveProvince').value;
+                let district = document.getElementById('saveWard').value;
+                let ward = document.getElementById('saveDistrict').value;
+                let detail = document.getElementById('detail').value;
+                window.location.href = '/client/payment/pay?subtotalResult=' + subtotal + '&totalResult=' + total +
+                    '&saveProvince=' + province + '&saveDistrict=' + district + '&saveWard=' + ward + '&detail=' + detail;
+            } else {
+                document.getElementById('error-vnpay').style.display = 'block';
+            }
+        }
+    }
+</script>
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "UA-23581568-13");
+</script>
+<script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"84261bbc3a85079f","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"
+></script>
+</body>
+</html>
